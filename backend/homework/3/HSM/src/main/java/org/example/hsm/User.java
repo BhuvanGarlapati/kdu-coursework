@@ -1,6 +1,6 @@
-package org.example.HSM;
+package org.example.hsm;
 
-import org.example.BillingComponent.HealthInsurancePlan;
+import org.example.billingcomponent.HealthInsurancePlan;
 
 public class User {
     private int id;
@@ -28,7 +28,7 @@ public class User {
     public String getLastNAme(){
         return LastName;
     }
-    public void setLAstName(String lAstName){
+    public void setLAstName(String LasstName){
         this.LastName=LastName;
     }
     public String getGender(){
