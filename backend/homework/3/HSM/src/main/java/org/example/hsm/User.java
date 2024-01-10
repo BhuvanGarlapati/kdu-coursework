@@ -5,7 +5,7 @@ import org.example.billingcomponent.HealthInsurancePlan;
 public class User {
     private int id;
     private String firstName;
-    private String LastName;
+    private String lastName;
     private String gender;
     private String email;
     private int age;
@@ -26,10 +26,10 @@ public class User {
         this.firstName=firstName;
     }
     public String getLastNAme(){
-        return LastName;
+        return lastName;
     }
-    public void setLAstName(String LasstName){
-        this.LastName=LastName;
+    public void setLastName(String LastName){
+        this.lastName=LastName;
     }
     public String getGender(){
         return gender;
