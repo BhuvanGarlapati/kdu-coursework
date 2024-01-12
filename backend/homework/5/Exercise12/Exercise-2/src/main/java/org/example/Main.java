@@ -1,8 +1,6 @@
 package org.example;
 
-import org.example.MessageQueue;
-import org.example.MessageReceiver;
-import org.example.MessageSender;
+
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 public class Main {
