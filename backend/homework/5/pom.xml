@@ -7,12 +7,15 @@
     <groupId>org.example</groupId>
     <artifactId>Backend-5</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <modules>
+        <module>LogBack</module>
 
-    <properties>
-        <maven.compiler.source>17</maven.compiler.source>
-        <maven.compiler.target>17</maven.compiler.target>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    </properties>
+        <module>Exercise12</module>
+        <module>Exercise12/Exercise-1</module>
+        <module>Exercise12/Exercise-2</module>
+        <module>Exercise-3</module>
+    </modules>
     <build>
         <pluginManagement>
             <plugins>
@@ -24,17 +27,10 @@
             </plugins>
         </pluginManagement>
     </build>
-    <dependencies>
-    <dependency>
-        <groupId>ch.qos.logback</groupId>
-        <artifactId>logback-classic</artifactId>
-        <version>1.4.12</version>
-    </dependency>
-    <dependency>
-        <groupId>ch.qos.logback</groupId>
-        <artifactId>logback-core</artifactId>
-        <version>1.4.12</version>
-    </dependency>
-</dependencies>
+    <properties>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
 
 </project>
