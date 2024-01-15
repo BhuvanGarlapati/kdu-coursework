@@ -25,10 +25,10 @@ public class CryptoTradingApplication {
     public void loadData() {
         // Implement loading data from CSV files
         // Load coins from the csv file
-        this.coins = loadCoinsFromCSV("/Users/bhuvang/Downloads/assigment-1/src/main/java/org/example/coins.csv");
+        this.coins = loadCoinsFromCSV("/Users/bhuvang/kdu-coursework/backend/assignments/1/src/main/resources/coins.csv");
 
         // Load traders
-        this.traders = loadTradersFromCSV("/Users/bhuvang/Downloads/assigment-1/src/main/java/org/example/traders.csv");
+        this.traders = loadTradersFromCSV("/Users/bhuvang/kdu-coursework/backend/assignments/1/src/main/resources/traders.csv");
     }
 
 private List<Coin> loadCoinsFromCSV(String filePath) {
@@ -108,7 +108,7 @@ private List<Coin> loadCoinsFromCSV(String filePath) {
 
     public void runTransactions() {
         // Load transaction data from JSON file
-        JsonNode jsonTransactions = loadJsonDataFromFile("C:\\Users\\Asus\\IdeaProjects\\assigment-1\\src\\main\\java\\org\\example\\small_transaction.json");
+        JsonNode jsonTransactions = loadJsonDataFromFile("/Users/bhuvang/kdu-coursework/backend/assignments/1/src/main/resources/small_transaction.json");
 
         // Create a CountDownLatch with the number of transactions
         CountDownLatch latch = new CountDownLatch(jsonTransactions.size());
