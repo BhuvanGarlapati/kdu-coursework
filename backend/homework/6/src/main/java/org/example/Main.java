@@ -4,7 +4,7 @@ import org.example.beans.Vehicle;
 import org.example.beans.VehicleService;
 import org.example.config.ProjectConfig;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.context.aot.ApplicationContextAotGenerator;
+
 
 import java.util.List;
 
