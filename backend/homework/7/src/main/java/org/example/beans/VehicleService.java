@@ -13,7 +13,7 @@ import java.util.List;
 @Component
 public class VehicleService {
     private static final org.slf4j.Logger logger = LoggerFactory.getLogger(VehicleService.class);
-    protected static final List<Vehicle> inventory = new ArrayList<>();
+    protected  List<Vehicle> inventory = new ArrayList<>();
     private Factory factory;
     private TyreService tyreService;
     private SpeakerService speakerService;
