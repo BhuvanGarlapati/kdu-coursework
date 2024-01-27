@@ -4,7 +4,6 @@ public class Vehicle {
     public void setName(String name) {
         this.name = name;
     }
-    private number=10000;
     private String name;
 
     public void setSpeaker(Speaker speaker) {
