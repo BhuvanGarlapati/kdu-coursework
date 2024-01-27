@@ -4,7 +4,7 @@ public class Vehicle {
     public void setName(String name) {
         this.name = name;
     }
-
+    public  double number=10000.0;
     private String name;
 
     public void setSpeaker(Speaker speaker) {
@@ -40,7 +40,7 @@ public class Vehicle {
     }
 
     private double constantPrice() {
-        return 10000.0;
+        return number;
     }
 
     public double getPrice() {

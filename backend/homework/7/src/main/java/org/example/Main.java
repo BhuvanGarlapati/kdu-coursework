@@ -9,7 +9,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import static org.example.beans.VehicleService.inventory;
 
 public class Main {
-    private static final org.slf4j.Logger logger = LoggerFactory.getLogger(VehicleService.class);
+    private static final org.slf4j.Logger logger = LoggerFactory.getLogger(Main.class);
     public static void main(String[] args) {
         var context = new AnnotationConfigApplicationContext(ProjectConfig.class);
 
