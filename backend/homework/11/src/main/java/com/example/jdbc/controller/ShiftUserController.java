@@ -1,7 +1,6 @@
 package com.example.jdbc.controller;
 
 import com.example.jdbc.dao.ShiftUserDAO;
-import com.example.jdbc.dto.ShiftTypeDTO;
 import com.example.jdbc.dto.ShiftUserDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

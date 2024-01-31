@@ -1,6 +1,6 @@
 package com.example.jdbc.dto;
 
-import lombok.AllArgsConstructor;
+
 import lombok.Data;
 
 import java.util.UUID;

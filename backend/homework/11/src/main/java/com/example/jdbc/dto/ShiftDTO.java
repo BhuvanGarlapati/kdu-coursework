@@ -1,11 +1,8 @@
 package com.example.jdbc.dto;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
-
-import javax.management.ConstructorParameters;
 import java.time.Instant;
-import java.util.UUID;
+
 
 @Data
 public class ShiftDTO {
@@ -21,5 +18,4 @@ public class ShiftDTO {
     private String timeZone;
     private String tenantId;
 
-    // Getters and setters
 }

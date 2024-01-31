@@ -1,6 +1,5 @@
 package com.example.jdbc.dto;
 
-import com.example.jdbc.constant.ShiftType;
 import lombok.Data;
 
 import java.time.Instant;
