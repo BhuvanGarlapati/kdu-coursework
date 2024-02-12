@@ -27,7 +27,7 @@ module.exports = defineConfig({
     PASSWORD: "test",
     USERNAME: "test-user",
     NAME: "test-name",
-    HOME_PAGE_URL: "/home-page/index.html",
+    HOME_PAGE_URL: "/index.html",
     LOGIN_PAGE_URL: "login/index.html",
     REGISTER_PAGE_URL: "/register/index.html",
     TEST_THRESHOLD: 0.35,
