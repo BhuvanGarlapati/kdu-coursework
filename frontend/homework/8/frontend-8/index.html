@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    img{
+        width: 50px;
+        height: 50px;
+    }
+
+    #searchInput {
+      padding: 8px;
+      width: 200px;
+    }
+
+    #searchButton {
+      padding: 8px;
+      cursor: pointer;
+    }
+
+    #recipesList {
+      margin-top: 20px;
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .recipeItem {
+      margin-bottom: 10px;
+      border: 1px solid #ddd;
+      padding: 10px;
+      border-radius: 5px;
+    }
+
+    .recipeItem img {
+      max-width: 50%;
+      height: auto;
+      border-radius: 5px;
+    }
+    .top-page{
+        width: 97%;
+        height: 50px;
+        background-color: darkgray;
+        border:4px  solid black;
+        border-radius: 10px;
+        margin-bottom: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+</style>
+<body>
+    <div class="top-page">
+        <h1>Recipe Search</h1>
+    </div>
+    <div>
+        <input type="text" id="searchInput" placeholder="Enter recipe name">
+        <button id="searchButton">Search</button>
+      </div>
+      <ul id="recipesList"></ul>
+    
+    <script >
+        document.addEventListener('DOMContentLoaded', function () {
+  const searchInput = document.getElementById('searchInput');
+  const searchButton = document.getElementById('searchButton');
+  const recipesList = document.getElementById('recipesList');
+
+  searchButton.addEventListener('click', async function () {
+    const searchQuery = searchInput.value;
+    const recipes = await fetchRecipes(searchQuery);
+    displayRecipes(recipes);
+  });
+
+  async function fetchRecipes(query) {
+    try {
+      const searchUrl = query ? `https://dummyjson.com/recipes/search?q=${encodeURIComponent(query)}` : 'https://dummyjson.com/recipes';
+      const response = await fetch(searchUrl);
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+
+      const data = await response.json();
+      return data.recipes;
+    } catch (error) {
+      console.error('Error fetching recipes:', error);
+      return [];
+    }
+  }
+
+  function displayRecipes(recipes) {
+    recipesList.innerHTML = '';
+
+    if (recipes.length === 0) {
+      const noResultsMessage = document.createElement('p');
+      noResultsMessage.textContent = 'No recipes found.';
+      recipesList.appendChild(noResultsMessage);
+    } else {
+      recipes.forEach(recipe => {
+        const listItem = document.createElement('li');
+        listItem.className = 'recipeItem';
+
+        const image = document.createElement('img');
+        image.src = recipe.image;
+        image.alt = recipe.name;
+
+        const recipeDetails = document.createElement('div');
+        const title = document.createElement('h3');
+        title.textContent = recipe.name;
+
+        const details = document.createElement('p');
+        details.innerHTML = `
+          Rating: ${recipe.rating} | Cuisine: ${recipe.cuisine} | Difficulty: ${recipe.difficulty}<br>
+          Time Taken: ${recipe.timeTaken} minutes | Calories per Serving: ${recipe.caloriesPerServing}
+        `;
+
+        recipeDetails.appendChild(title);
+        recipeDetails.appendChild(details);
+
+        listItem.appendChild(image);
+        listItem.appendChild(recipeDetails);
+
+        recipesList.appendChild(listItem);
+      });
+    }
+  }
+});
+
+    </script>
+</body>
+</html>
