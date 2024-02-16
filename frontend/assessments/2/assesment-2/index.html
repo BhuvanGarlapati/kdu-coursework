@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Market</title>
+        <link rel="stylesheet" href="styles.css">
+        <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.1.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+</head>
+<body>
+    <header class="top-header">
+        <h1>KDU Stock Market Dashboard</h1>
+    </header>
+    <div class="container">
+        <div class="left-container">
+            <div class="left-top-container">
+                <div class="title-stock">
+                    <div class="title-style">
+                        <h5>Zomato</h5>
+                    </div>
+                </div>
+                <div class="price-info">
+                    <div>
+                        <h5>Price:</h5>
+                    </div>
+                </div>
+                <div class="quantity">
+                    <input type="text" id="html" name="fav_language" value="Enter Quantity">
+    <label for="html"></label><br>
+
+                </div>
+                <div class="buy">
+                    <h4>Buy</h4>
+                </div>
+                <div class="sell">
+                    <h4>Sell</h4>
+                </div>
+            </div>
+            <div class="left-bottom-container">
+                <div class="wrapper">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    
+
+
+                  </div>
+
+            </div>
+
+        </div>
+        <div class="container-right">
+            <div class="container-right-top">
+                <h3>History</h3>
+
+            </div>
+
+        </div>
+
+    </div>
+    <script src="./main.js">
+       
+    </script>
+    <script src="https://cdn.socket.io/4.7.4/socket.io.min.js" integrity="sha384-Gr6Lu2Ajx28mzwyVR8CFkULdCU7kMlZ9UthllibdOSo6qAiN+yXNHqtgdTvFXMT4" crossorigin="anonymous"></script>
+    <script>
+        const stocks= [
+    {
+        "name":"Zomato",
+        "price":150,
+        "quantity":100,
+        "type":"SELL",
+        "id":1
+    },{
+        "name":"Zomato",
+        "price":130,
+        "quantity":100,
+        "type":"BUY",
+        "id":2
+    },
+    {
+        "name":"Zomato",
+        "price":120,
+        "quantity":100,
+        "type":"BUY",
+        "id":3
+    },
+    {
+        "name":"Zomato",
+        "price":170,
+        "quantity":100,
+        "type":"SELL",
+        "id":4
+    }
+
+];
+const message = 'Zomato';
+const socket = io("http://localhost:3001");
+
+socket.on("new-message",(message)=>{
+    addMessage(message);
+});
+socket.emit("message",message);
+        addMessage(message);
+
+socket.on("new-message",(message)=>{
+    addMessage(message);
+    });
+
+socket.on("stock-details",(data)=> {
+    console.log(data[0]);
+    });      
+
+
+    
+const title1 = document.getElementsByClassName("title-stock");
+const priceinfo=document.querySelector(".price-info");
+const containerrighttop=document.querySelector(".container-right-top");
+const leftbottomcontainer=document.querySelector(".left-bottom-container"); 
+
+containerrighttop.addEventListener("load",()=>{
+        const stocktype = stocks[0].type;
+        const price=stocks[0].price;
+        const quantity=stocks[0].quantity;
+        //emit the message
+        // socket.emit("message",message);
+        addStock(stocktype,price,quantity);
+    });
+
+function addStock(stocktype,price,quantity){
+    let div = document.createElement('div');
+    let valueprice=document.createElement('h5') ;
+    div.classList.add("price");
+    h5.classList.add("price-style");
+    h5.innerText = `Price : $${price}`;
+    div.appendChild(h5);
+    priceinfo.appendChild(div);
+    let card1=document.createElement('div');
+    let iner=document.createElement('h5') ;
+    card1.innerText=quantity;
+    iner.innerText=stocktype;
+
+    containerrighttop.appendChild(card1);
+    containerrighttop.appendChild(iner);
+    clucalate(stocks[0],stocks[1]);
+
+    
+};
+
+function addbar(present,previous){
+    const bars=document.createElement('div');
+    bars.classList.add("bars");
+    if (Number(present)> Number(previous)) {
+        bars.classList.add("bars-red");
+}else{
+    bars.classList.add("bars-green");
+} 
+}
+function clucalate(previous,present){
+const a = previous.price;
+const b = present.price;
+const c = (b/a)*100;
+if(c<0){
+    const buysell=document.createElement('div');
+    buysell.classList.add("buy");
+    containerrighttop.appendChild(buysell);
+}else{
+    const buysell1=document.createElement('div');
+    buysell.classList.add("sell");
+    containerrighttop.appendChild(buysell1);
+}
+}
+
+function addMessage(message){
+    const comapany= document.createElement('div');
+    comapany.classList.add('title-style');
+    comapany.innerHTML=message;
+    title1.append(comapany);
+    
+}
+
+
+    </script>
+</body>
+</html>
