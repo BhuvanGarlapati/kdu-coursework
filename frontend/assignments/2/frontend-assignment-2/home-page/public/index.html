@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Twitter login</title>
+    <link rel="stylesheet" href="loginstyle.css" />
+    <link rel="stylesheet" href="reset.css" />
+  </head>
+  <body>
+        <form class="login-form">
+            <div class="logo-section">
+                <h2>Login to </h2>
+                <div class="x-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                      <path
+                        d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"
+                      />
+                    </svg>
+                  </div>
+            </div>
+            <div class="name-section">
+                <input type="text"  id="username" placeholder="Username" name="uname" required>
+            </div>
+            <div class="password-section">
+                <input type="password" id="password" placeholder="Password" name="password" required>
+            </div>
+            <div class="button-section">
+                <button id="button" type="submit">Login</button> 
+            </div>
+        </form>
+        <div id="result"></div> 
+        <script src="https://cdn.socket.io/4.7.4/socket.io.min.js" integrity="sha384-Gr6Lu2Ajx28mzwyVR8CFkULdCU7kMlZ9UthllibdOSo6qAiN+yXNHqtgdTvFXMT4" crossorigin="anonymous"></script>
+        <script>
+         const socket = io("http://localhost:8000");
+ 
+         document.querySelectorAll('input').forEach((input) => {
+             input.addEventListener('input', function () {
+                 this.removeAttribute('placeholder');
+             });
+         });
+ 
+         
+     document.querySelector('form').addEventListener('submit', async (event) => {
+         event.preventDefault();
+ 
+         const username = document.getElementById('username').value;
+         const password = document.getElementById('password').value;
+ 
+         try {
+             const response = await fetch('http://localhost:8000/login', {
+                 method: 'POST',
+                 headers: {
+                     'Content-Type': 'application/json',
+                 },
+                 body: JSON.stringify({ username, password }),
+             });
+ 
+             const data = await response.json();
+ 
+             if (data.success) {
+                 alert('Login successful');
+                  window.location.href = "http://127.0.0.1:5502/home-page/index.html";
+ 
+             } else {
+                 alert('Login failed. Please check your credentials.');
+             }
+         } catch (error) {
+             console.error('Error during login:', error);
+         }
+     });
+ 
+        </script>
+</body>
+</html>
