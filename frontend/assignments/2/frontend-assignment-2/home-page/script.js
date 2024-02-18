@@ -1,8 +1,4 @@
 
-
-
-
-
 const tweetButton = document.querySelector(".tweet-btn")
 const postInput = document.querySelector(".post-input")
 const postsSection = document.querySelector(".posts");

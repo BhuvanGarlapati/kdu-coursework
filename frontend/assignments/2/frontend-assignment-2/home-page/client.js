@@ -86,4 +86,72 @@ const minutes = now.getMinutes();
            
             addMessage(message.username,message.text,message.time);
            
-        })
+        });
+
+        const postsDiv = document.getElementsByClassName("posts")[0];
+        fetch(`http://${window.location.hostname}:3000/api/posts/5/1`)
+          .then((response) => response.json())
+          .then((posts) => {
+            posts.forEach((post) => {
+              const postElement = createPostElement(post);
+              postsDiv.appendChild(postElement);
+            });
+          })
+          .catch((error) => {
+            console.error("Error in the fetching posts:", error);
+          });
+          window.addEventListener("scroll", function () {
+            if (
+              window.innerHeight + window.scrollY >=
+              document.body.offsetHeight *.95
+            ) {
+              fetchMorePosts();
+            }
+          });
+        
+          fetch(`http://${window.location.hostname}:3000/api/posts`, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(newPost),
+          })
+            .then((response) => {
+              if (response.ok) {
+                return response.json();
+              } else {
+                throw new Error("Failed to add post");
+              }
+            })
+            .then((post) => {
+              createPostElement(post);
+              if (window.innerWidth < 500) {
+                tweetBoxProfileMobile.style.display = "none";
+                posts.style.display = "block";
+                profileIcon.style.display = "flex";
+                floatingTweetBoxIcon.style.display = "flex";
+                tweetBox.style.display = "none";
+              }
+              window.location.reload();
+    
+              tweetInput.value = "";
+              postButton.style.backgroundColor = "";
+              postButton.style.color = "";
+            });
+                function fetchMorePosts() {
+                    const pageSize = 5;
+                    fetch(`http://${window.location.hostname}:3000/api/posts/${pageSize}/${page}`)
+                    .then((response) => response.json())
+                    .then((posts) => {
+                        posts.forEach((post) => {
+                        const postElement = createPostElement(post);
+                        const postsDiv = document.getElementsByClassName("posts")[0];
+                        postsDiv.appendChild(postElement);
+                        });
+                    })
+                    .catch((error) => {
+                        console.error("Error in the fetching more posts:", error);
+                    });
+                    page = page + 1;
+                }
+                                    

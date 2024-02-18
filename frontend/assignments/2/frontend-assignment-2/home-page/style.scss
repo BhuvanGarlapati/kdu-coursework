@@ -125,6 +125,193 @@ body {
     }
   }
 }
+.post-btn {
+  background-color: $btn-color;
+  border: none;
+  width: 88%;
+  margin-top: -10px;
+  padding: $font-size * 0.78 $font-size / 2.6;
+  font-size: $font-size;
+  border-radius: $icon-size;
+  color: $white-color;
+  font-family: $font-family;
+  font-weight: 900;
+}
+
+.user-profile {
+  width: auto;
+  display: flex;
+  margin-top: 2.6 * $icon-size;
+  padding-bottom: $font-size * 1.12;
+  padding-left: $icon-size / 2;
+  .left-profile {
+    margin: auto 0;
+    img {
+      width: $font-size * 2;
+      border-radius: 50%;
+    }
+  }
+  .name-profile {
+    margin: 0 $icon-size / 2;
+    margin-right: $font-size * 3;
+    line-height: $icon-size / $font-size;
+    font-size: $icon-size / 2;
+    font-weight: 900;
+    font-family: $font-family;
+    h3 {
+      color: $grey-font;
+    }
+  }
+  .more-profile {
+    margin: auto 0;
+    svg {
+      path {
+        font-size: $icon-size * 2;
+      }
+    }
+  }
+}
+
+.tweet-box {
+display: flex;
+padding: $icon-size/2;
+padding-bottom: $icon-size/2.7;
+width: 19 * $icon-size;
+height: max-content;
+border-top: 2px solid $grey-border;
+border-bottom: 2px solid $grey-border;
+
+.left-tweet-box {
+  img {
+    width: $font-size * 4;
+    border-radius: 50%;
+  }
+}
+.right-tweet-box {
+  width: 100%;
+  padding-top: $font-size / 5;
+  padding-left: $font-size / 2;
+  input {
+    background-color: $black-bg-color;
+    border: none;
+    padding-bottom: $icon-size * 3.5;
+    width: 100%;
+    color: $white-color;
+  }
+  input,
+  input::placeholder {
+    font-size: $icon-size / 1.55;
+    font-family: $font-family;
+    font-weight: 600;
+  }
+  .tweet-box-icons {
+    display: flex;
+    justify-content: space-between;
+    div {
+      margin: auto 0;
+      svg {
+        width: $font-size * 2;
+        margin-right: $font-size;
+        path {
+          fill: $btn-color;
+        }
+        .inactive-icon {
+          fill: $inactive-icon-color;
+        }
+      }
+    }
+    .tweet-btn {
+      background-color: $inactive-btn-color;
+      border: none;
+      padding: $font-size/ 2 $font-size;
+      font-size: $icon-size / 2;
+      font-family: $font-family;
+      color: $white-color;
+      border-radius: $icon-size;
+      font-weight: 900;
+    }
+  }
+}
+}
+
+.post {
+display: flex;
+padding: $font-size;
+padding-bottom: $font-size;
+width: 19.5 * $icon-size;
+border-top: 2px solid $grey-border;
+.left-post-box {
+  img {
+    width: $font-size * 4;
+    border-radius: 50%;
+  }
+}
+.right-post-box {
+  padding-left: $font-size;
+  padding-top: $font-size / 3;
+
+  .post-title {
+    display: flex;
+    h3 {
+      margin-right: $font-size / 3;
+      font-size: $font-size;
+      font-family: $font-family;
+      font-weight: 600;
+    }
+    .user-name {
+      color: $grey-font;
+      font-size: $icon-size / 2.2;
+    }
+  }
+  .post-content {
+    padding-top: $font-size / 2;
+    font-size: $icon-size / 1.9;
+    font-family: $font-family;
+    font-weight: 500;
+    letter-spacing: -0.2px;
+  }
+  .post-icons {
+    margin-top: $icon-size / 2.7;
+    display: flex;
+    margin-bottom: 4px;
+    div {
+      display: flex;
+
+      h1 {
+        margin: auto $font-size;
+        color: $grey-font;
+      }
+      svg {
+        width: $font-size * 2;
+        path {
+          fill: $grey-font;
+        }
+      }
+
+      .unlike-post {
+        path {
+          fill: $liked-icon;
+        }
+        .like-count {
+          color: $liked-icon;
+        }
+      }
+    }
+    .info-icons {
+      display: flex;
+      justify-content: space-between;
+      flex-grow: 1;
+    }
+    .download-icon {
+      margin-left: $font-size;
+    }
+  }
+}
+}
+
+.hashtags {
+color: $btn-color;
+}
 
 
 @media screen and (max-width: 414px) {
