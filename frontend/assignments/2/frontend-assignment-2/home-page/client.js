@@ -108,6 +108,46 @@ const minutes = now.getMinutes();
               fetchMorePosts();
             }
           });
+          if (window.innerWidth < 500) {
+            const parentElement = document.querySelector(".tweet-box");
+            const toReplace = document.querySelector(".tweet-box-profile");
+            parentElement.replaceChild(childElement, toReplace);
+          }
+          let imageInput = document.querySelector("#imageInput");
+          let tweetBox = document.querySelector(".tweet-box");
+          let postButton = document.querySelector(".tweet-btn");
+          let tweetInput = document.querySelector(".post-input");
+          
+          const posts = document.getElementsByClassName("posts")[0];
+          const profileIcon = document.getElementsByClassName("profile-icon")[0];
+          imageInput.addEventListener("change", handleImageInput);
+          profileIcon.addEventListener("click", showNavigationSection);
+          
+          tweetInput.addEventListener("input", function () {
+            const tweetContent = tweetInput.value.trim();
+            if (tweetContent.length > 0) {
+              postButton.style.backgroundColor = "#1D9BF0";
+              postButton.style.color = "white";
+            } else {
+              postButton.style.backgroundColor = "";
+              postButton.style.color = "";
+            }
+          });
+        
+          floatingTweetBoxIcon.addEventListener("click", function () {
+            if (tweetBoxProfileMobile.style.display === "none") {
+              tweetBoxProfileMobile.style.display = "block";
+              posts.style.display = "none";
+              tweetBox.style.display = "flex";
+        
+              tweetInput.style.display = "block";
+              profileIcon.style.display = "none";
+              floatingTweetBoxIcon.style.display = "none";
+            } else {
+              tweetBoxProfileMobile.style.display = "none";
+            }
+          });
+             
         
           fetch(`http://${window.location.hostname}:3000/api/posts`, {
             method: "POST",
@@ -126,7 +166,6 @@ const minutes = now.getMinutes();
             .then((post) => {
               createPostElement(post);
               if (window.innerWidth < 500) {
-                tweetBoxProfileMobile.style.display = "none";
                 posts.style.display = "block";
                 profileIcon.style.display = "flex";
                 floatingTweetBoxIcon.style.display = "flex";
@@ -154,4 +193,4 @@ const minutes = now.getMinutes();
                     });
                     page = page + 1;
                 }
-                                    
+                

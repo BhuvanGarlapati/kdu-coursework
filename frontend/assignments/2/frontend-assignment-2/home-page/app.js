@@ -16,7 +16,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 const server = http.createServer(app);
 const io = new socketIo.Server(server, {
     cors: {
-        origin: '*'
+        origin: 'http://127.0.0.1:5502'
     }
 });
 
