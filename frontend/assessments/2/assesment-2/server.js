@@ -12,7 +12,7 @@ app.use(cors());
 const server = http.createServer(app);
 const io = new socketIo.Server(server,{
     cors:{
-        origin:'*'
+        origin:'http://127.0.0.1:5500'
     }
 });
 
@@ -20,23 +20,20 @@ app.get('/', (req,res)=>{
     res.json('hello')
 });
 // app.use(express.static(path.join(__dirname,'public')));
+let stockPrice = 0;
+function pricechange(){
+    setInterval(() => {
+    const priceChange = Math.floor((Math.random() * 1000) - 500) ;
+ stockPrice += priceChange;
+    io.emit('price-update', {
+    timeInterval: new Date().toLocaleTimeString(),
+    priceChange: priceChange,
+        })
+    }, 5000);
+}
 
 
-
-io.on('connection',(socket) =>{
-    console.log('Connected');
-
-    socket.on("message", (payload)=>{
-        console.log("Payload",payload);
-        io.emit("new-message",payload);
-        // io.except(socket.id).emit('new-message',payload);
-       
-    });
-    io.emit("stock-details",stocks);
-    console.log(stocks);
-
-});
-
+pricechange()
 server.listen(3001,()=>{
     console.log('Server running')
 });
