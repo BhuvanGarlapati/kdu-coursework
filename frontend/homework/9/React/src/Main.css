@@ -1,0 +1,39 @@
+/* .container{
+    width: 100%;
+    height: 200px;
+    display: block;
+} */
+.skill-section{
+    display: inline-block;
+    background-color:greenyellow;
+    width: 45%;
+    height: 300px;
+    margin-top: 25px;
+    margin-left: 50px;
+
+}
+body{
+    background-color:  beige;
+    height: 20px;
+}
+.hobbies-section{
+    display: inline-block;
+    position: absolute;
+    background-color: yellow;
+    width: 45%;
+    height: 300px;
+    margin-top: 25px;
+    margin-left: 40px;
+
+}
+.skill-heading{
+    font-weight: bold;
+    color: brown;
+    text-align: center;
+}
+
+.skills-list{
+    list-style-type: none;
+    font-size: 20px;
+
+}
