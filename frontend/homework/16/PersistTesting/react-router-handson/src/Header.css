@@ -1,0 +1,26 @@
+.full-main {
+  display: flex;
+  flex-direction: row;
+}
+.full-main .header {
+  background-color: green;
+  width: 100%;
+  height: 60px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+}
+.full-main .header .heading {
+  size: 40px;
+  width: 40%;
+  height: 40px;
+  margin: auto;
+  color: aliceblue;
+}
+.full-main .header .searching {
+  width: 40%;
+  height: 40px;
+  margin: auto;
+}/*# sourceMappingURL=Header.css.map */
