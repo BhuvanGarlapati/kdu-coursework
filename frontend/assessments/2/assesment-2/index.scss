@@ -1,0 +1,176 @@
+
+.top-header {
+    height: 80px;
+    background-color: #1871c2;
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    align-items: center;
+    align-content: center;
+    box-sizing: border-box;
+    padding-top: 25px;
+    padding-left: 20px;
+}
+
+.container{
+    width: 100%;
+    padding-top: 2rem;
+    box-sizing: border-box;
+    display: flex;
+    .left-container {
+        width: 83%;
+        .left-top-container {
+            height: 50px;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            .logo {
+                width: 40px;
+                height: 40px;
+                padding-bottom: 10px;
+            }
+            .title-stock {
+                border: 1px solid black;
+                display: flex;
+                padding: 6px 1rem;
+                width: 16rem;
+                h2 {
+                    margin: auto;
+                    padding-left: 8px;
+                    font-size: 1.3rem;
+                }
+                
+               
+            }
+            .price-info{
+                display: flex;
+                width: 20rem;
+                border: 1px solid black;
+                justify-content: space-evenly;
+                .up {
+                    color:#2f9e44;
+                }
+                .down {
+                    color:  #e03131;
+                }
+
+                // h2 {
+                //     font-size: 1.3rem;
+                // }
+                
+
+            }
+            .quantity{
+                font-size: 1rem;
+                width: 10rem;
+                padding-left: 1.2rem;
+                box-sizing: border-box;
+            }
+            .sell-btn {
+                cursor: pointer;
+                width: 60px;
+                background-color:#ffc9c9;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border: 1px solid #e03131;
+                h2 {
+                    font-size: 1rem;
+                    color:  #e03131;
+                }
+            }
+            .buy-btn {
+                width: 60px;
+                background-color:#b2f2bb;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border: 1px solid #2f9e44;
+                cursor: pointer;
+                h2 {
+                    font-size: 1rem;
+                    color: #2f9e44;
+                }
+            }
+        }
+        .graph-container {
+            position: relative;
+            width:1050px;
+            height: 500px;
+            border: 1px solid black;
+            margin: 20px 30px;
+            box-sizing: border-box;
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+                grid-template-rows: repeat(4, 1fr);
+            .item {
+                border: 1px dotted black;
+                opacity: 0.3;
+            }
+            .bar-graph-container {
+                position: absolute;
+                display: flex;
+                align-items: end;
+                height: 500px;
+                top: 0;
+                left: 0;
+                box-sizing: border-box;
+                .bar-graph {
+                    width: 20px;
+                    box-sizing: border-box;
+                }
+                .up {
+                    background-color:#b2f2bb;
+                    border: 1px solid #2f9e44;
+                }
+                .down {
+                    background-color:#ffc9c9;
+                    border: 1px solid  #e03131;
+                }
+            }
+        }
+    }
+
+    .right-main {
+        width: 20%;
+        height: auto;
+        margin-right: 2rem;
+        margin-bottom: 2rem;
+        border: 1px solid black;
+        h1 {
+            font-size: 1.7rem;
+        }
+        .transaction {
+            border: 1px solid black;
+            margin: 0.5rem 1rem;
+            display: flex;
+            height: 60px;
+            width: 60%;
+            justify-content: center;
+        
+        .transaction-type {
+               
+            h1 {
+                    font-size: 20px;
+                    padding-top: -10px;
+                }
+                .Sell {
+                    color: #e03131;
+                }
+                .Buy {
+                    color: #2f9e44;
+                   
+                }
+                
+            }        
+            .transaction-info {
+                width: 100px;
+                height: 100px;
+                h2 h3{
+                    font-size: 1rem;
+                }
+            }
+
+        }
+    }
+}
