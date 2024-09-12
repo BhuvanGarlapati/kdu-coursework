@@ -1,0 +1,47 @@
+.quote-container{
+    margin: auto;
+    width: 60%;
+    background-color: #0C359E;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    .quote{
+        font-size: 20px;
+        padding-left: 20px;
+        color: #F6F5F5;
+    }
+    .quote-author{
+        justify-content: end;
+        display: flex;
+        color: #F6F5F5;
+        padding-right: 20px;
+        margin: 0;
+    }
+    .quote-date{
+        justify-content: end;
+        display: flex;
+        color: gray;
+        padding-right: 20px;
+        margin: 0;
+    }
+    .quote-tag{
+        display: flex;
+        flex-direction: row;
+        margin: 20px;
+        .quote-tag-single{
+            width: 15%;
+            height: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #EE99C2;
+            border-radius: 30px;
+            text-align: center;
+            font-size:10px;
+            color: black;
+            font-weight: bold;
+            
+        }
+    }
+}
