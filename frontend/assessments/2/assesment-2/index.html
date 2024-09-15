@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Stock MArket</title>
+        <link rel="stylesheet" href="./index.css" />
+    </head>
+    <body>
+        <div class="top-header">
+            KDU Stock Market Dashboard
+        </div>
+        <div class="container">
+            <div class="left-container">
+                <div class="left-top-container">
+                    <div class="title-stock">
+                        <img  class="logo" src="/zomato_logo.jpg"
+                            
+                        />
+                        <h2>Zomato</h2>
+                    </div>
+                    <div class="price-info">
+                        <h2 class="price-tag">Price:</h2>
+                        <h2 class="value up">0.0</h2>
+                        <h3 class="value-change up">0.0%</h3>
+                    </div>
+                    <input
+                        placeholder="Enter QTY"
+                        class="quantity-input"
+                    />
+                    <div class="buy-btn"><h2>Buy</h2></div>
+                    <div class="sell-btn"><h2>Sell</h2></div>
+                </div>
+                <div class="graph-container">
+                    <div class="item"></div>
+                    <div class="item"></div>
+                    <div class="item"></div>
+                    <div class="item"></div>
+                    <div class="item"></div>
+                    <div class="item"></div>
+                    <div class="item"></div>
+                    <div class="item"></div>
+                    <div class="item"></div>
+                    <div class="item"></div>
+                    <div class="item"></div>
+                    <div class="item"></div>
+                    <div class="item"></div>
+                    <div class="item"></div>
+                    <div class="item"></div>
+                    <div class="item"></div>
+                    <div class="item"></div>
+                    <div class="item"></div>
+                    <div class="item"></div>
+
+
+                    <div class="item"></div>
+                    <div class="item"></div>
+
+
+                    <div class="item"></div>
+                    <div class="item"></div>
+
+
+                    <div class="item"></div>
+                    <div class="item"></div>
+                    <div class="bar-graph-container"></div>
+                </div>
+            </div>
+            <div class="right-main">
+                <h1>History</h1>
+            </div>
+        </div>
+        <script
+            src="https://cdn.socket.io/4.7.4/socket.io.min.js"
+            integrity="sha384-Gr6Lu2Ajx28mzwyVR8CFkULdCU7kMlZ9UthllibdOSo6qAiN+yXNHqtgdTvFXMT4"
+            crossorigin="anonymous"
+        ></script>
+
+        <script >
+
+const socket = io("http://localhost:5001");
+
+const priceValue = document.querySelector(".value");
+const priceValueChange = document.querySelector(".value-change")
+const barGraphContainer = document.querySelector(".bar-graph-container")
+const inputquantity = document.querySelector(".quantity-input")
+const transactionList = document.querySelector(".right-main")
+
+const updateprice = (newPrice) => {
+    let currPrice = priceValue.textContent;
+    currPrice = currPrice.substring(0, currPrice.length - 2)
+    console.log(currPrice);
+
+    const newPriceChange = Math.round((newPrice - currPrice)/  currPrice * 100 * 100) / 100;
+    const newBar = document.createElement("div");
+    newBar.style.height = `${newPrice}px`
+    newBar.classList.add("bar-graph");
+    newPriceChange >= 0 ? newBar.classList.add("up"): newBar.classList.add("down");
+    if (newPriceChange >=  0) {
+        priceValue.classList.add("up");
+        priceValue.classList.remove("down");
+        priceValueChange.classList.add("up");
+        priceValueChange.classList.remove("down");
+    priceValue.innerHTML = newPrice +  ` &#8593;`;
+    }
+    priceValueChange.textContent = newPriceChange + "%";
+    barGraphContainer.appendChild(newBar);
+}
+
+
+socket.on("stock-details", (price) => updateprice(price));
+
+const generateTransaction = (transactionClass, amount) => {
+
+        const newTransaction = document.createElement("div");
+        newTransaction.classList.add("transaction")
+        const transactionInfo = document.createElement("div");
+        transactionInfo.classList.add("transaction-info");
+        const stockQuantity = document.createElement("h3");
+        stockQuantity.textContent = `${amount} Stocks`;
+        inputquantity.value = "";
+        stockQuantity.classList.add("quantity");
+        transactionInfo.appendChild(stockQuantity)
+        const transactionType = document.createElement("div");
+        transactionType.classList.add("transaction-type");
+        const tradeType = document.createElement("h1");
+        tradeType.textContent = transactionClass
+        tradeType.classList.add(transactionClass)
+        transactionType.appendChild(tradeType);
+        newTransaction.appendChild(transactionInfo);
+        newTransaction.appendChild(transactionType);
+        transactionList.appendChild(newTransaction);
+        
+}
+const buyButton = document.querySelector(".buy-btn");
+const sellButton = document.querySelector(".sell-btn");
+buyButton.addEventListener("click", () => generateTransaction("Buy", inputquantity.value))
+sellButton.addEventListener("click", () => generateTransaction("Sell", inputquantity.value))
+
+
+
+
+        </script>
+    </body>
+</html>
