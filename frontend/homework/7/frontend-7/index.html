@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link rel="stylesheet" href="./styles.css" /></link>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.1.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+    <title>Chat App</title>
+    </head>
+    <body>
+        <div class="container">
+            
+            <div class="container-top">
+                <h1 id="heading">KDU Chat App</h1>
+            </div>
+
+            <div class="container-main">
+                <div class="container-main-chat">
+                    
+                </div>
+            </div>
+
+            <div class="container-bottom">
+                <div class="container-bottom-input">
+                    <input type ="text" id="msgText" placeholder="Write a message here...">
+                    <button id ="sendMessage"><i class="fi fi-rr-paper-plane-top"></i></button>
+                </div>
+            </div>
+        </div>
+
+
+<script src="https://cdn.socket.io/4.7.4/socket.io.min.js" integrity="sha384-Gr6Lu2Ajx28mzwyVR8CFkULdCU7kMlZ9UthllibdOSo6qAiN+yXNHqtgdTvFXMT4" crossorigin="anonymous">
+
+</script>
+<script>
+    const messageInput = document.getElementById("msgText");
+    const sendButton = document.getElementById("sendMessage");
+    
+//add the message the front end
+    function addMessage(from,message){
+        if (message !== '') {
+        const messageOutput = document.querySelector(".container-main");
+        const totalmessage = document.createElement('div');
+        const messageElement = document.createElement('div');
+        totalmessage.classList.add('totalmessage');
+        if(from === "You"){
+            const youicon = document.createElement('div');
+            youicon.textContent=from.substring(0,1);
+            youicon.classList.add("you-icon");
+            totalmessage.appendChild(youicon);
+            messageElement.classList.add("message"); 
+        } else {
+            const usericon = document.createElement('div');
+            usericon.textContent=from.substring(0,1);
+            usericon.classList.add("user-icon");
+            totalmessage.appendChild(usericon);
+            messageElement.classList.add("other-message"); 
+        }
+    
+    messageElement.textContent = message;
+    totalmessage.appendChild(messageElement);
+    messageOutput.appendChild(totalmessage);
+    messageInput.value = '';
+    messageOutput.scrollTop = messageOutput.scrollHeight;
+      
+    }
+}
+//add click eventListener
+    sendButton.addEventListener("click",()=>{
+        const message = messageInput.value;
+        //emit the message
+        socket.emit("message",message);
+        addMessage("You",message);
+    });
+//recives the message from backend server
+    const socket = io("http://localhost:3000");
+    socket.on("new-message",(message)=>{
+        addMessage("User",message);
+    })
+    </script>
+   
+    </body>
+</html>
