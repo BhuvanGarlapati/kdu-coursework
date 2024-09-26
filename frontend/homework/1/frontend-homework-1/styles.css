@@ -1,0 +1,103 @@
+/* html {
+  min-width: 550px;
+  position: relative;
+  } */
+
+.nav-top{
+    margin-bottom: 10px;
+}
+#top-nav{
+    list-style-type: none;
+    position: relative;
+    padding: 10px;
+    height: 25px;
+    width: 100%;
+    overflow: hidden;
+    
+    background-color: plum;
+}
+.nav-bar {
+    float: left;
+  }
+  
+  .nav-bar a {
+    display: inline;
+    color: purple;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  li a:hover:not(.active) {
+    background-color: papayawhip;
+    color: black;
+  }
+  #title-nav {
+    
+        float: none;
+        position: absolute;
+        padding-top: 15px;
+        left: 50%;
+        transform: translate(-50%, -50%);
+     
+  }
+  .hire{
+    display: block;
+    height: 80px;
+    width: 100%;
+    text-align: center;
+    position: relative;
+    border: 3px solid rgb(8, 9, 8);
+    background-color: darkorange;
+    margin-bottom: 15px; 
+  }
+
+  .image{
+    position: fixed;
+    margin-left: 1280px;
+    display: block;
+    height: 10px;
+    width: 10px;
+  }
+
+  h2.para-tag{
+    color: blueviolet;
+  }
+
+  div ol{
+    color: brown;
+  }
+  
+  #child-selector > form{
+    font-size: medium;
+    font-weight: bold;
+  }
+
+  #adjcent-sibling+input{
+    color: darkorange;
+  }
+
+  #general-sibling ~ textarea{
+    font-size: medium;
+    font-style: italic;
+    color: dimgray;
+  }
+
+  option::first-letter{
+    color: gold;
+  }
+  
+#review{
+  box-sizing: border-box;
+  height: 100px;
+  border-radius: 5px;
+  border: 7px  solid darkblue;
+}
+
+.contents-sizing{
+  width: 60px;
+  height: 20px;
+  border: 8px solid red;
+  background: yellow;
+  box-sizing: content-box;
+}
