@@ -1,0 +1,103 @@
+.container{
+    display:flex;
+    flex-direction: column;
+    height: 35rem;
+    width: 100%;
+    border: brown 2px solid;
+
+    #heading{
+        font-size: 2rem;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: brown;
+        align-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .container-top{
+        background-color: #DFE1E6;
+        height: 5rem;
+    }
+    .container-main{
+        height: 80%;
+        display: flex;
+        flex-direction: column;
+        overflow-y: scroll;
+        .container-main-chat{
+            display: flex;
+            flex-direction: column;
+            overflow-y: scroll;
+            width: 90%;
+            height:2rem;
+            margin-top: 1.4rem;
+            
+        }
+    }
+    .container-bottom{
+        height: 3rem;
+        // margin-top: 120px;
+        margin-bottom: 15px;
+        align-items: center;
+        .container-bottom-input{
+            text-align: center;
+            #msgText{
+                width: 87%;
+                height: 2.2rem;
+            }
+            #sendMessage{
+                height: 2rem;
+                margin-left: -2.5rem;
+                
+            }
+        }
+    }
+}
+
+
+.message {
+    background-color:silver;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    border-radius: 4px;
+    margin-left: 1rem;
+  }
+  .other-message{
+    background-color:brown;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    border-radius: 4px;
+    margin-left: 1rem;
+  }
+
+  .you-icon{
+    width: 2rem;
+    display: flex;
+    justify-content: center;
+
+    height: 2rem;
+    border-radius: 100%;
+    text-align: center;
+    align-items: center;
+    align-content: center;
+    background-color: brown;
+  }
+  .user-icon{
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    justify-content: center;
+    border-radius: 100%;
+    text-align: center;
+    align-items: center;
+    align-content: center;
+    background-color:#DFE1E6;
+  }
+
+  .totalmessage{
+    display: flex;
+    margin-bottom: 1.5rem;
+    flex-direction: row;
+    align-items: center;
+  }

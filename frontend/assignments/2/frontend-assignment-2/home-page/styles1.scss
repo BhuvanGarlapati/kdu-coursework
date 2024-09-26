@@ -1,0 +1,420 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@900&display=swap");
+
+$black-bg-color: black;
+$grey-border: #2b2f32;
+$grey-font: #5a5e63;
+$white-color: #e7e9ea;
+$icon-size: 1.8rem;
+$font-size: 0.7rem;
+$font-family: "Open Sans", sans-serif;
+$btn-color: #1d9bf0;
+$inactive-btn-color: #124e78;
+$inactive-icon-color: #11486e;
+$liked-icon: #f91880;
+
+html {
+  background-color: $black-bg-color;
+  color: $white-color;
+}
+body {
+//   padding-left: $icon-size;
+  display: flex;
+  font-size: large;
+  font-family: $font-family;
+}
+
+.navigation-section {
+  padding-top: $icon-size / 2;
+  padding-left: $icon-size / 2;
+  height: 100%;
+  width: 10 * $icon-size;
+  border-right: 2px solid $grey-border;
+
+  .x-icon {
+    width: $icon-size;
+    padding-left: $icon-size / 2.2;
+    path {
+      fill: $white-color;
+    }
+  }
+
+  .nav-fields {
+    padding-left: $icon-size;
+
+    div {
+      display: flex;
+      margin: $font-size * 1.8 0;
+      position: relative;
+
+      .blue-dot {
+        width: $icon-size / 5;
+        height: $icon-size / 5;
+        border-radius: 50%;
+        position: absolute;
+        background-color: $btn-color;
+        top: -70%;
+        left: 8%;
+      }
+
+      h3 {
+        font-size: $font-size * 2;
+        margin: auto 0;
+        font-weight: 900;
+        font-family: $font-family;
+        margin-left: $font-size / 1.1;
+      }
+      svg {
+        height: $icon-size;
+        width: $icon-size;
+        path {
+          fill: $white-color;
+        }
+      }
+    }
+    .gork-field,
+    .bookmark-field,
+    .profile-field {
+      padding-top: 5px;
+    }
+  }
+
+  .post-btn {
+    background-color: $btn-color;
+    border: none;
+    width: 88%;
+    margin-top: -10px;
+    padding: $font-size * 0.78 $font-size / 2.6;
+    font-size: $font-size;
+    border-radius: $icon-size;
+    color: $white-color;
+    font-family: $font-family;
+    font-weight: 900;
+  }
+
+  .user-profile {
+    width: auto;
+    display: flex;
+    margin-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    .left-profile {
+      margin: auto 0;
+      img {
+        width:33px;
+        border-radius: 50%;
+      }
+    }
+    .name-profile {
+      margin: 0 10px;
+      margin-right: 20px;
+      line-height: 10px;
+      font-size: 12px;
+      font-weight: 900;
+      font-family: $font-family;
+      h3 {
+        color: $grey-font;
+      }
+    }
+    .more-profile {
+      margin: auto 0;
+      svg {
+        path {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+}
+// body{
+//     width: 100%;
+//     height: 100%;
+// }
+.chat{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    .chat-profile{
+      width: 40%;
+    //   height: 60rem;
+      border-right: 2px  solid #2b2f32;
+      .message-head{
+        display: flex;
+        flex-direction: column;
+        height: 40px;
+        color:white;
+        h4{
+            margin-top: 10px;
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+            size: 20rem;
+            padding-left: 24px;
+        }
+      }
+  
+    }
+    .container{
+        display:flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 48rem;
+        width:60%;
+        
+        // .container-top{
+        //     background-color: #DFE1E6;
+        //     height: 2rem;
+        // }
+        .container-main{
+            height: 94%;
+            display: flex;
+            flex-direction: column;
+            overflow-y: scroll;
+            .container-main-chat{
+                display: flex;
+                flex-direction: column;
+                overflow-y: scroll;
+                width: 90%;
+                height:2rem;
+                margin-top: 1.4rem;
+                
+            }
+        }
+    .container-bottom{
+        height: 3rem;
+        align-items: center;
+        margin-left: 3px;
+        margin-right: 3px;
+        border-top: #2b2f32 solid 1.5px;
+        .container-bottom-input{
+            margin-top: 8px;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            
+            
+            #msgText{
+                text-align: start;
+            display: flex;
+            justify-content: center;
+            color: #DFE1E6;
+            padding-left: 15px;
+                width: 95%;
+                height: 2.2rem;
+                background-color: #2b2f32;
+                border: #2b2f32;
+                border-radius: 20px;
+            }
+            #sendMessage{
+                height: 2rem;
+                margin-top: 5px;
+                margin-left: -2.5rem;
+                color: #1d9bf0;
+                background-color: #2b2f32;
+                border: #2b2f32;
+                
+            }
+        }
+    }
+}
+  }
+  .message {
+    background-color:#5a5e63;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    display: flex;
+    justify-content: flex-start;
+    padding: 10px;
+   
+    // margin-left: 1rem;
+  }
+  .other-message{
+    background-color:#1d9bf0;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px;
+    margin-left: 1rem;
+  }
+
+
+  .totalmessage{
+    display: flex;
+    // margin-bottom: 1.5rem;
+    flex-direction: row-reverse;
+    align-items: center;
+  }
+  .totalmessage1{
+    display: flex;
+    // margin-bottom: 1.5rem;
+    flex-direction: row;
+    align-items: center;
+  }
+  .heading{
+    font-size: 20px;
+    margin: 2px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #1d9bf0;
+    align-content: center;
+    align-items: start;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    text-align: start;
+    border-bottom: #2b2f32 solid 2px;
+}
+
+.font-name{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    height: 3rem;
+    font-size: 2rem;
+    color: #DFE1E6;
+    text-align: center;
+    align-items: center;
+    align-content: center;
+}
+
+.times-style{
+    margin-top: 5px;
+    width: 2rem;
+    height: 1rem;
+    font-size: 10px;
+    color: #DFE1E6;
+    color:#5a5e63;
+    span{
+        display: inline-block;
+        width: 40px;
+    }
+    
+}
+.times-style1{
+    margin-top: 5px;
+    width: 2rem;
+    height: 1rem;
+    font-size: 10px;
+    color: #DFE1E6;
+    margin-left: 41rem;
+    color:#5a5e63;
+    span{
+        display: inline-block;
+        width: 40px;
+    }
+}
+.card-design{
+    display: inline-block;
+    width: 100%;
+    height: 40px;
+    border-right: #1d9bf0;
+}
+.message-person{
+    display: flex;
+    flex-direction: row;
+    display: flex;
+    align-items: center;
+    background-color: #2b2f32;
+    border-right:#1d9bf0 solid 2px ;
+    padding-left: 20px;
+    .create-icon{
+        width: 2.5rem;
+        height: 2.5rem;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: $btn-color;
+    }
+    .create-icon1{
+        width: 2.5rem;
+        height: 2.5rem;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: orangered;
+    }
+    .text-person{
+        margin-left: 12px;
+    }
+    .tweet-id{
+        color: #5a5e63;
+        font-size: 0.8rem;
+        margin-left: 12px;
+    }
+}
+.messages-field{
+    color: #5a5e63;
+        path{
+            fill:#5a5e63;
+        }
+}
+.mobile-bottom{
+    display: none;
+}
+
+@media screen and (max-width: 414px){
+    .navigation-section{
+        display:none;
+    }
+  
+     .container-main{
+        display: none;
+    }
+    .container{
+        display: none;
+    }
+    .container-top{
+        display: none;
+    }
+    .container-bottom{
+        display: none;
+    }
+    .chat .container {
+        display: none;
+    }
+    .message-person{
+        width: 380px
+    }
+    .chat-profile{
+        border-right: none;
+    }
+   
+        .nav-fields1{
+            
+            display: flex;
+            flex-direction: row;
+            position: absolute;
+            bottom: 0px;
+            justify-content: space-between;
+            width: 97%;
+        
+            div {
+              display: flex;
+              margin: 2px;
+              position: relative;
+        
+           
+              h3 {
+                font-size: $font-size * 2;
+                margin: auto 0;
+                font-weight: 900;
+                font-family: $font-family;
+                margin-left: $font-size / 1.1;
+              }
+              svg {
+                height: $icon-size;
+                width: $icon-size;
+                path {
+                  fill: $white-color;
+                }
+              }
+            }
+            .gork-field
+             {
+              padding-top: 5px;
+            }
+          }
+        
+    }
+    

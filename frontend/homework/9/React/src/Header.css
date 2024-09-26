@@ -1,0 +1,13 @@
+.header{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-left: 30px;
+    background-color: beige;
+}
+.header-part{
+    font-size: 40px;
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+    display: flex;
+}
