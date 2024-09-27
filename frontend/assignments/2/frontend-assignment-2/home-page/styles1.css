@@ -1,0 +1,378 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@900&display=swap");
+html {
+  background-color: black;
+  color: #e7e9ea;
+}
+
+body {
+  display: flex;
+  font-size: large;
+  font-family: "Open Sans", sans-serif;
+}
+
+.navigation-section {
+  padding-top: 0.9rem;
+  padding-left: 0.9rem;
+  height: 100%;
+  width: 18rem;
+  border-right: 2px solid #2b2f32;
+}
+.navigation-section .x-icon {
+  width: 1.8rem;
+  padding-left: 0.8181818182rem;
+}
+.navigation-section .x-icon path {
+  fill: #e7e9ea;
+}
+.navigation-section .nav-fields {
+  padding-left: 1.8rem;
+}
+.navigation-section .nav-fields div {
+  display: flex;
+  margin: 1.26rem 0;
+  position: relative;
+}
+.navigation-section .nav-fields div .blue-dot {
+  width: 0.36rem;
+  height: 0.36rem;
+  border-radius: 50%;
+  position: absolute;
+  background-color: #1d9bf0;
+  top: -70%;
+  left: 8%;
+}
+.navigation-section .nav-fields div h3 {
+  font-size: 1.4rem;
+  margin: auto 0;
+  font-weight: 900;
+  font-family: "Open Sans", sans-serif;
+  margin-left: 0.6363636364rem;
+}
+.navigation-section .nav-fields div svg {
+  height: 1.8rem;
+  width: 1.8rem;
+}
+.navigation-section .nav-fields div svg path {
+  fill: #e7e9ea;
+}
+.navigation-section .nav-fields .gork-field,
+.navigation-section .nav-fields .bookmark-field,
+.navigation-section .nav-fields .profile-field {
+  padding-top: 5px;
+}
+.navigation-section .post-btn {
+  background-color: #1d9bf0;
+  border: none;
+  width: 88%;
+  margin-top: -10px;
+  padding: 0.546rem 0.2692307692rem;
+  font-size: 0.7rem;
+  border-radius: 1.8rem;
+  color: #e7e9ea;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 900;
+}
+.navigation-section .user-profile {
+  width: auto;
+  display: flex;
+  margin-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+}
+.navigation-section .user-profile .left-profile {
+  margin: auto 0;
+}
+.navigation-section .user-profile .left-profile img {
+  width: 33px;
+  border-radius: 50%;
+}
+.navigation-section .user-profile .name-profile {
+  margin: 0 10px;
+  margin-right: 20px;
+  line-height: 10px;
+  font-size: 12px;
+  font-weight: 900;
+  font-family: "Open Sans", sans-serif;
+}
+.navigation-section .user-profile .name-profile h3 {
+  color: #5a5e63;
+}
+.navigation-section .user-profile .more-profile {
+  margin: auto 0;
+}
+.navigation-section .user-profile .more-profile svg path {
+  font-size: 20px;
+}
+
+.chat {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+}
+.chat .chat-profile {
+  width: 40%;
+  border-right: 2px solid #2b2f32;
+}
+.chat .chat-profile .message-head {
+  display: flex;
+  flex-direction: column;
+  height: 40px;
+  color: white;
+}
+.chat .chat-profile .message-head h4 {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  font-size: 1.3rem;
+  size: 20rem;
+  padding-left: 24px;
+}
+.chat .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 48rem;
+  width: 60%;
+}
+.chat .container .container-main {
+  height: 94%;
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+}
+.chat .container .container-main .container-main-chat {
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  width: 90%;
+  height: 2rem;
+  margin-top: 1.4rem;
+}
+.chat .container .container-bottom {
+  height: 3rem;
+  align-items: center;
+  margin-left: 3px;
+  margin-right: 3px;
+  border-top: #2b2f32 solid 1.5px;
+}
+.chat .container .container-bottom .container-bottom-input {
+  margin-top: 8px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+.chat .container .container-bottom .container-bottom-input #msgText {
+  text-align: start;
+  display: flex;
+  justify-content: center;
+  color: #DFE1E6;
+  padding-left: 15px;
+  width: 95%;
+  height: 2.2rem;
+  background-color: #2b2f32;
+  border: #2b2f32;
+  border-radius: 20px;
+}
+.chat .container .container-bottom .container-bottom-input #sendMessage {
+  height: 2rem;
+  margin-top: 5px;
+  margin-left: -2.5rem;
+  color: #1d9bf0;
+  background-color: #2b2f32;
+  border: #2b2f32;
+}
+
+.message {
+  background-color: #5a5e63;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  display: flex;
+  justify-content: flex-start;
+  padding: 10px;
+}
+
+.other-message {
+  background-color: #1d9bf0;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px;
+  margin-left: 1rem;
+}
+
+.totalmessage {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+}
+
+.totalmessage1 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.heading {
+  font-size: 20px;
+  margin: 2px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #1d9bf0;
+  align-content: center;
+  align-items: start;
+  padding-left: 10px;
+  padding-bottom: 10px;
+  text-align: start;
+  border-bottom: #2b2f32 solid 2px;
+}
+
+.font-name {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  height: 3rem;
+  font-size: 2rem;
+  color: #DFE1E6;
+  text-align: center;
+  align-items: center;
+  align-content: center;
+}
+
+.times-style {
+  margin-top: 5px;
+  width: 2rem;
+  height: 1rem;
+  font-size: 10px;
+  color: #DFE1E6;
+  color: #5a5e63;
+}
+.times-style span {
+  display: inline-block;
+  width: 40px;
+}
+
+.times-style1 {
+  margin-top: 5px;
+  width: 2rem;
+  height: 1rem;
+  font-size: 10px;
+  color: #DFE1E6;
+  margin-left: 41rem;
+  color: #5a5e63;
+}
+.times-style1 span {
+  display: inline-block;
+  width: 40px;
+}
+
+.card-design {
+  display: inline-block;
+  width: 100%;
+  height: 40px;
+  border-right: #1d9bf0;
+}
+
+.message-person {
+  display: flex;
+  flex-direction: row;
+  display: flex;
+  align-items: center;
+  background-color: #2b2f32;
+  border-right: #1d9bf0 solid 2px;
+  padding-left: 20px;
+}
+.message-person .create-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #1d9bf0;
+}
+.message-person .create-icon1 {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: orangered;
+}
+.message-person .text-person {
+  margin-left: 12px;
+}
+.message-person .tweet-id {
+  color: #5a5e63;
+  font-size: 0.8rem;
+  margin-left: 12px;
+}
+
+.messages-field {
+  color: #5a5e63;
+}
+.messages-field path {
+  fill: #5a5e63;
+}
+
+.mobile-bottom {
+  display: none;
+}
+
+@media screen and (max-width: 414px) {
+  .navigation-section {
+    display: none;
+  }
+  .container-main {
+    display: none;
+  }
+  .container {
+    display: none;
+  }
+  .container-top {
+    display: none;
+  }
+  .container-bottom {
+    display: none;
+  }
+  .chat .container {
+    display: none;
+  }
+  .message-person {
+    width: 380px;
+  }
+  .chat-profile {
+    border-right: none;
+  }
+  .nav-fields1 {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    bottom: 0px;
+    justify-content: space-between;
+    width: 97%;
+  }
+  .nav-fields1 div {
+    display: flex;
+    margin: 2px;
+    position: relative;
+  }
+  .nav-fields1 div h3 {
+    font-size: 1.4rem;
+    margin: auto 0;
+    font-weight: 900;
+    font-family: "Open Sans", sans-serif;
+    margin-left: 0.6363636364rem;
+  }
+  .nav-fields1 div svg {
+    height: 1.8rem;
+    width: 1.8rem;
+  }
+  .nav-fields1 div svg path {
+    fill: #e7e9ea;
+  }
+  .nav-fields1 .gork-field {
+    padding-top: 5px;
+  }
+}/*# sourceMappingURL=styles1.css.map */
